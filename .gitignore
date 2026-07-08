@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp 目录（临时文件，不同步）
+Temp/
+
+# 本地配置覆盖
+.claude/settings.local.json
+
+# 敏感凭证
+.env
+*.key
+*.pem
+secrets/
+
+# Runtime / cookie databases
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Skills: 排除构建产物和运行时文件，保留源码
+skills/**/node_modules/
+skills/**/dist/
+skills/**/.connection
+skills/**/.server.log
+skills/**/.server.pid
+skills/**/package-lock.json
+
+# scripts/ 运行时产物
+scripts/**/node_modules/
+scripts/**/__pycache__/
+
+# Debug / temp files
+tmp_*
+*.tmp
+*_debug.png
+**/.popo_storage_state.json
+**/.popo_debug.png
+
+# Office temp lock files
+~$*
+
+# 日志（如果放在项目根）
+*.log

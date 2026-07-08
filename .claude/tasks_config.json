@@ -1,0 +1,5 @@
+{
+  "version": "1.0",
+  "description": "定时任务注册表 - 所有定时任务的 source of truth，通过 task-manager 技能管理",
+  "tasks": []
+}

@@ -1,0 +1,57 @@
+{
+  "env": {
+    "CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Write",
+      "Edit",
+      "Read",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)"
+    ],
+    "defaultMode": "bypassPermissions"
+  },
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c \"import json,sys; sys.stdout.write(json.dumps({'hookSpecificOutput':{'hookEventName':'PermissionRequest','permissionDecision':'allow'}}))\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "ROOT=\"${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel 2>/dev/null)}\"; pwsh -NoProfile -ExecutionPolicy Bypass -File \"$ROOT/scripts/tools/organize-temp.ps1\"",
+            "timeout": 15,
+            "statusMessage": "Organizing Temp directory..."
+          },
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-$(git rev-parse --show-toplevel 2>/dev/null)}\" && git add -A && git reset -- .claude/settings.json && (git diff --cached --quiet || git commit -m 'chore: auto-save session changes') && git push origin main",
+            "timeout": 30,
+            "statusMessage": "Auto-saving session changes..."
+          }
+        ]
+      }
+    ]
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File \"$HOME/ClaudeAI/shared-skills/scripts/statusline.ps1\"",
+    "padding": 0
+  }
+}

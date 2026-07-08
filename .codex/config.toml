@@ -1,0 +1,13 @@
+# Codex CLI 项目配置
+# {{PROJECT_NAME}}
+
+model = "gpt-4o"
+
+developer_instructions = """
+你是本项目的执行者 Agent。
+- 项目路径：{{PROJECT_PATH}}
+- 项目方向：{{PROJECT_DESCRIPTION}}
+- 执行脚本前先确认路径正确
+- 删除操作必须先确认
+- 技能相关修改交给 Claude Code 处理
+"""

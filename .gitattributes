@@ -1,0 +1,23 @@
+# Git LFS tracking rules
+# 素材/ — binary and large data files via LFS
+素材/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+素材/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+素材/**/*.png filter=lfs diff=lfs merge=lfs -text
+素材/**/*.gif filter=lfs diff=lfs merge=lfs -text
+素材/**/*.skill filter=lfs diff=lfs merge=lfs -text
+素材/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+素材/**/*.xls filter=lfs diff=lfs merge=lfs -text
+素材/**/*.csv filter=lfs diff=lfs merge=lfs -text
+素材/**/*.zip filter=lfs diff=lfs merge=lfs -text
+素材/**/*.exe filter=lfs diff=lfs merge=lfs -text
+
+# 脚本/ — scripts and generated data files via LFS
+脚本/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.png filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.gif filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.xlsx filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.xls filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.csv filter=lfs diff=lfs merge=lfs -text
+脚本/**/*.zip filter=lfs diff=lfs merge=lfs -text
+素材/技能素材/插件/WinMD5.exe filter=lfs diff=lfs merge=lfs -text

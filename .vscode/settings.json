@@ -1,0 +1,6 @@
+{
+    "claudeCode.initialPermissionMode": "bypassPermissions",
+    "claudeCode.allowDangerouslySkipPermissions": true,
+    "explorer.sortOrder": "type",
+    "liveServer.settings.port": 5501
+}

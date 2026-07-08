@@ -1,0 +1,10 @@
+assets/
+skills/
+scripts/
+Temp/
+backup/
+memory/
+tmp_*
+*.png
+*.xlsx
+*.pdf
